@@ -90,7 +90,7 @@
                     When are community question answering (CQA) platforms like StackExchange, sustainable? In our recent <a href="https://arxiv.org/pdf/1712.00139.pdf" target="_blank">paper</a> at <a href="https://www2018.thewebconf.org/" target="_blank">the Web conference</a>, we investigate CQA sustainability from an economic perspective–providing insights on their successes and failures through an interpretable model. Our key idea is to interpret CQA platforms as <em>markets</em>, where participants exchange knowledge. We used this “knowledge market” perspective to analyze the question answering sites on <a href="https://stackexchange.com/">StackExchange</a>, and showed that the content generation in StackExchanges can be captured through <a href="https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function">Cobb-Douglas</a> model–a production model from Economics. Our model provides intuitive explanation for the successes and failures of knowledge markets through the concept of <a href="https://www.investopedia.com/terms/d/diseconomiesofscale.asp">economies and diseconomies</a>.</h5>
                     <br>
                     <figure class="figure">
-                        <img src="../images/Size_vs_Diseconomies_with_Title.png" class="center-block" width="75%" alt="Missing figure for diseconomies of scale.">
+                        <img src="../images/www2018/Size_vs_Diseconomies_with_Title.png" class="center-block" width="75%" alt="Missing figure for diseconomies of scale.">
                         <br>
                         <figcaption><h5><strong>Figure 1:</strong> Cobb-Douglas model can predict economies (diseconomies) of scale–whether the ratio of answers to questions will increase (decease) with the increase in number of users. We present the economies and diseconomies of scale in three StackExchanges: SUPERUSER (strong diseconomies), PUZZLING (weak economies), and CSTHEORY (strong economies). <strong>Most StackExchanges exhibit diseconomies of scale.</strong></h5></figcaption>
                     </figure>                   
@@ -105,13 +105,13 @@
                     <h5>In a knowledge market, users generate different types of content such as questions, answers and comments. Content in these markets exhibit dependencies, e.g., answers depends on questions, and comments depend on questions and answers. We combine user participation and content dependency to model content generation in knowledge markets. To this end, we use <a href="https://en.wikipedia.org/wiki/Production_function"><em>production functions</em></a>, which are a natural way to model output in a market. These functions involve two components, a basis function (Figure 2) and an interaction type (Figure 3). We consider three possible basis: exponential, power, and sigmoid; and four possible interaction types: essential, interactive essential, antagonistic, and substitutable. Considering these choices, we found that the combination of <em>power</em> basis and <em>interactive essential</em> interaction provides the best fit to our dataset for all StackExchanges. In economics, this combination is known as the Cobb-Douglas model.</h5>
                     <br>
                     <figure class="figure">
-                        <img src="../images/All_Basis.png" class="center-block" width="75%" alt="Missing figure for basis functions.">
+                        <img src="../images/www2018/All_Basis.png" class="center-block" width="75%" alt="Missing figure for basis functions.">
                         <br>
                         <figcaption><h5><strong>Figure 2:</strong> A basis function captures the relationship between an input and output, e.g., how the number of questions affect the number of answers.</h5></figcaption>
                     </figure>
                     <br><br>
                     <figure class="figure">
-                        <img src="../images/All_Interaction.png" class="center-block" width="100%" alt="Missing figure for interaction types.">
+                        <img src="../images/www2018/All_Interaction.png" class="center-block" width="100%" alt="Missing figure for interaction types.">
                         <br>
                         <figcaption><h5><strong>Figure 3:</strong> An interaction types capture how different inputs interact to produce an output, e.g., how the number of questions and number of answerers interact to generate number of answers.</h5></figcaption>
                     </figure>                    
@@ -126,7 +126,7 @@
                     <h5>Our model asserts that, for most StackExchanges, the aggregate user behavior changes with the size of user community. Figure 4 shows how answering behavior in ANDROID StackExchange changes with community size. Specifically, as the community grows, the users who join more recently are likely to contribute fewer answers compared to those who joined at an early stage. This phenomena is true for most StackExchanges, with varying strength. The larger communities tend to behave similar to ANDROID. Now, why do we observe such size dependent distribution of user behavior? It turns out, in StackExchanges, there’s a core group of users who substantially contribute answers for a long period. The size of this core does not grow in proportion to the community size, which causes the <em>size dependent distribution</em>, which in turn causes <em>diseconomies</em>–ratio of answer to question declines with the increase in community size.</h5>
                     <br>
                     <figure class="figure">
-                        <img src="../images/Android_SDD.png" class="center-block" width="75%" alt="Missing figure for size dependent distribution.">
+                        <img src="../images/www2018/Android_SDD.png" class="center-block" width="75%" alt="Missing figure for size dependent distribution.">
                         <br>
                         <figcaption><h5><strong>Figure 4:</strong> Size dependent distribution of answering behavior in ANDROID StackExchange. Users who join more recently are likely to contribute fewer answers compared to those who joined at an early stage.</h5></figcaption>
                     </figure>               
