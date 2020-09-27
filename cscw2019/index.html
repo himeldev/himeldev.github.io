@@ -82,24 +82,24 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="all-title text-center">
-					<h2>Quantifying Voter Biases in Online Platforms<hr size="10"></h2>
+					<h2>Quantifying Voter Biases in Online Platforms: An IV Approach<hr size="10"></h2>
 				</div>               
                 <h1>Votes as Social Judgement</h1>         
                 <div class="title-para">
-                    <h5>The premise of this research (<a href="https://arxiv.org/pdf/1910.00757.pdf" target="_blank">CSCW 2019</a>) lies in our previous work (<a href="https://arxiv.org/pdf/1712.00139.pdf" target="_blank">WWW 2018</a>), where we discovered that users who join a Stack Exchange site more recently contribute fewer answers per month compared to those who joined at an early stage (Figure 1). Furthermore, the gap between the participation of old users and newcomers increases significantly as the community grows in terms of the number of users. This empirical phenomenon naturally raises the question: <em>is there any discrepancy between the motivation and perhaps the incentives of old users and newcomers?</em></h5>
+                    <h5>The premise of this research (<a href="https://arxiv.org/pdf/1910.00757.pdf" target="_blank">CSCW 2019</a>) lies in our previous work (<a href="https://arxiv.org/pdf/1712.00139.pdf" target="_blank">WWW 2018</a>), where we discovered that users who join a Stack Exchange site more recently contribute fewer answers per month compared to those who joined at an early stage (Figure 1). Furthermore, the gap between the participation of old users and newcomers increases significantly as the community grows in terms of the number of users. This empirical phenomenon naturally raises the question: <em>is there any discrepancy between the motivation and perhaps the incentives of old users and newcomers?</em></h5><br> 
                     <figure class="figure">
-                        <img src="../images/cscw2019/Stable_Core.PNG" class="center-block" width="50%" alt="Missing figure for stable core.">
+                        <img src="../images/cscw2019/Stable_Core.PNG" class="center-block" width="40%" alt="Missing figure for stable core.">
                         <br>
                         <figcaption><h5><strong>Figure 1:</strong> The average number of answers per month contributed by users with different tenure (i.e., number of active months). Notice that old users contribute a higher number of average answers per month compared to the newcomers.</h5></figcaption>
-                    </figure> 
-                    <h5>While presenting our work at WWW 2018, we came across several blog posts and discussions on social media, where people claimed that online platforms like Stack Exchange are not welcoming to newcomers. A particular <a href="https://stackoverflow.blog/2018/04/26/stack-overflow-isnt-very-welcoming-its-time-for-that-to-change/" target="_blank">blog post</a> stood out amongst these, where Stack Exchange officials acknowledged the problem of newcomers experiencing Stack Overflow to be an unwelcoming place. Such strong qualitative evidence made us wonder if there are systematic biases in how these communities treat newcomers.</h5>
-                    <h5><strong>Could it be that what is causing the newcomers to give up, is not the poor quality of their content, but the biased social judgment of their peers?  </strong></h5>
-                    <h5>In the present work, we examine biases in social judgment, specifically in the form of votes. We concentrate on votes because they are the primary social feedback in content-based platforms, such as Stack Exchange, Reddit, and Quora. Votes are crucial as not only they form the basis of most platform’s ranking and recommendation services, but also their rewarding policies. The latter has a profound impact on the retention of users.</h5>
-                    <h5>Motivated by such powerful implications of votes, we ask the following questions:<br> 
-                    - What are the <em>factors</em> that affect votes on content?<br>  
-                    - Which of these factors may lead to <em>biases</em>?<br> 
-                    - What is the degree to which the <em>biasing factors</em> affect the votes on content?</h5>
-                    <h5>Our goal is to answer these <em>causal questions</em> in an <em>observational setup</em>. Estimating causal effects from observational data is exceptionally challenging. There may be unobserved confounders that explain the association between the biasing factors and the observed votes.            
+                    </figure><br>  
+                    <h5>While presenting our work at WWW 2018, we came across several blog posts and discussions on social media, where people claimed that online platforms like Stack Exchange are not welcoming to newcomers. A particular <a href="https://stackoverflow.blog/2018/04/26/stack-overflow-isnt-very-welcoming-its-time-for-that-to-change/" target="_blank">blog post</a> stood out amongst these, where Stack Exchange officials acknowledged the problem of newcomers experiencing Stack Overflow to be an unwelcoming place. Such strong qualitative evidence made us wonder if there are systematic biases in how these communities treat newcomers.<br> 
+                    <strong>Could it be that what is causing the newcomers to give up, is not the poor quality of their content, but the biased social judgment of their peers?  </strong><br> 
+                    In the present work, we examine biases in social judgment, specifically in the form of votes. We concentrate on votes because they are the primary social feedback in content-based platforms, such as Stack Exchange, Reddit, and Quora. Votes are crucial as not only they form the basis of most platform’s ranking and recommendation services, but also their rewarding policies. The latter has a profound impact on the retention of users.<br> 
+                    Motivated by such powerful implications of votes, we ask the following questions:<br> 
+                    -- What are the <em>factors</em> that affect votes on content?<br>  
+                    -- Which of these factors may lead to <em>biases</em>?<br> 
+                    -- What is the degree to which the <em>biasing factors</em> affect the votes on content?<br> 
+                    Our goal is to answer these <em>causal questions</em> in an <em>observational setup</em>. Estimating causal effects from observational data is exceptionally challenging. There may be unobserved confounders that explain the association between the biasing factors and the observed votes.</h5>            
                 </div>
             </div>
         </div>
@@ -108,16 +108,16 @@
             <div class="col-md-12">
                 <h1>Quantifying Voter Biases</h1>
                 <div class="title-para">
-                    <h5>Now that we have introduced our research questions and the main challenge, let’s inspect the factors that may affect votes. [Burghardt et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0173610) suggests a number of factors that may affect votes on content. Some usual suspects include: 
-                    - <em>Content topic</em> describes what the content is about;
-                    - <em>Content quality</em> refers to what the voter assesses the quality of the content to be;
-                    - <em>Presentation order</em> captures the position of the content in a list-style webpage;
-                    - <em>Social influence</em> in terms of prior votes as seen by the voter;
-                    - <em>Author reputation</em> reflects the online reputation of the user who created the content.
-                    Among these five factors, the first two factors (content topic and content quality) are properties of the content. The remaining factors (presentation order, social influence, and author reputation) are impression signals that appear in the user interface and act as sources of biases. We will now inspect these impression signals for a real-world platform and discuss how they may induce biases.
-                    For the purpose of this study, we concentrate on Stack Exchange. In Figure 2, we present a sample page from a Stack Exchange site, annotated with different impression signals that may induce voter biases. In Stack Exchange sites, the answers to any given question appear in some specific order on a page. The position of an answer plays a critical role in deciding how many users will pay attention to it and vote on it. Further, the user interface shows the prior votes on the answer which may act as a social signal to influence voters. In addition, the interface shows the reputation of the answerer in terms of reputation score and badges, which may further affect voters. Similar impression signals appear in other content-based platforms such as Reddit and Quora. </h5>
+                    <h5>Now that we have introduced our research questions and the main challenge, let’s inspect the factors that may affect votes. [Burghardt et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0173610) suggests a number of factors that may affect votes on content. Some usual suspects include:<br> 
+                    -- <em>Content topic</em> describes what the content is about;<br>
+                    -- <em>Content quality</em> refers to what the voter assesses the quality of the content to be;<br>
+                    -- <em>Presentation order</em> captures the position of the content in a list-style webpage;<br>
+                    -- <em>Social influence</em> in terms of prior votes as seen by the voter;<br>
+                    -- <em>Author reputation</em> reflects the online reputation of the user who created the content.<br>
+                    Among these five factors, the first two factors (content topic and content quality) are properties of the content. The remaining factors (presentation order, social influence, and author reputation) are impression signals that appear in the user interface and act as sources of biases. We will now inspect these impression signals for a real-world platform and discuss how they may induce biases.<br>
+                    For the purpose of this study, we concentrate on Stack Exchange. In Figure 2, we present a sample page from a Stack Exchange site, annotated with different impression signals that may induce voter biases. In Stack Exchange sites, the answers to any given question appear in some specific order on a page. The position of an answer plays a critical role in deciding how many users will pay attention to it and vote on it. Further, the user interface shows the prior votes on the answer which may act as a social signal to influence voters. In addition, the interface shows the reputation of the answerer in terms of reputation score and badges, which may further affect voters. Similar impression signals appear in other content-based platforms such as Reddit and Quora.</h5><br>
                     <figure class="figure">
-                        <img src="../images/cscw2019/StackExchange_Interface.png" class="center-block" width="75%" alt="Missing figure for basis functions.">
+                        <img src="../images/cscw2019/StackExchange_Interface.png" class="center-block" width="60%" alt="Missing figure for basis functions.">
                         <br>
                         <figcaption><h5><strong>Figure 2:</strong> A sample page from English Stack Exchange annotated with different impression signals that may induce voter biases. For all answers to a question: a) the score at top left corner shows the aggregate vote thus far (<em>social signal</em>), which may induce social influence bias; b) the statistics at bottom right corner shows the reputation score and badges acquired by the answerer (<em>reputation signal</em>), which may induce reputation bias; c) the answers are presented in a sequential order (<em>position signal</em>), which may induce position bias.</h5></figcaption>
                     </figure>               
